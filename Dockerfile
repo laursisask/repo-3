@@ -90,6 +90,10 @@ ADD https://github.com/alerta/alerta-webui/releases/download/v${WEBUI_VERSION}/a
 RUN tar zxvf /tmp/webui.tar.gz -C /tmp && \
     mv /tmp/dist /web
 
+COPY install-webhooks.sh /app/install-webhooks.sh
+COPY webhooks.txt /app/webhooks.txt
+RUN /app/install-webhooks.sh
+
 ENV ALERTA_SVR_CONF_FILE /app/alertad.conf
 ENV ALERTA_CONF_FILE /app/alerta.conf
 ENV ALERTA_WEB_CONF_FILE /web/config.json
