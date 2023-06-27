@@ -1,1 +1,1 @@
-webhooks/alerta_kentik master
+webhooks/kentik_alerta master
