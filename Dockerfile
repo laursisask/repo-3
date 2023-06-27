@@ -72,7 +72,8 @@ RUN curl -fsSL https://www.mongodb.org/static/pgp/server-4.2.asc | apt-key add -
     apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/*
 
-COPY requirements*.txt /app/
+COPY requirements.txt /app/
+COPY requirements-docker.txt /app/
 # hadolint ignore=DL3013
 RUN pip install --no-cache-dir pip virtualenv jinja2 && \
     python3 -m venv /venv && \
