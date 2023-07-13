@@ -1,0 +1,182 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nagarro Assignment</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <header>
+        <div class="card text-center" id="head">
+            <div class="card-header">
+                <b> Student Enrollment Form</b>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container ">
+            <div class="row ">
+                <div class="col-6">
+                    <form id="my-form" method="POST" class="myForm">
+
+                        <!-- NAME -->
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-12 col-md-3 col-form-label">Name</label>
+                            <div class="col-9 col-xs-3 col-md-6 mb-2">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
+                                    required>
+
+                            </div>
+                        </div>
+
+                        <!-- EMAIL -->
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-12 col-md-3 col-form-label">Email</label>
+                            <div class="col-9 col-xs-3 col-md-6 mb-3">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email"
+                                    required>
+
+                            </div>
+                        </div>
+
+                        <!-- WEBSITE -->
+                        <div class="form-group row">
+                            <label for="website" class="col-sm-12 col-md-3 col-form-label">Website</label>
+                            <div class="col-9 col-xs-3 col-md-6 mb-3">
+                                <input type="url" class="form-control" id="website" name="website"
+                                    placeholder="Website Link" required>
+
+                            </div>
+                        </div>
+
+                        <!-- IMAGE -->
+                        <div class="form-group row">
+                            <label for="image" class="col-sm-12 col-md-3 col-form-label">Image Link</label>
+                            <div class="col-9 col-xs-3 col-md-6 mb-3">
+                                <input type="url" class="form-control" id="image" name="image" placeholder="Image Link"
+                                    required>
+
+                            </div>
+                        </div>
+
+                        <!-- GENDER RADIO -->
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <label for="gender" class="col-sm-12 col-md-3 col-form-label">Gender</label>
+                                <div class="col-9 col-xs-3 col-md-6 mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="Male"
+                                            value="Male">
+                                        <label class="form-check-label" for="gender">
+                                            Male
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="Female"
+                                            value="Female">
+                                        <label class="form-check-label" for="gender">
+                                            Female
+                                        </label>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- SKILLS CHECKBOX -->
+                        <div class="form-group row mt-1">
+                            <label for="skills" class="col-sm-12 col-md-3 col-form-label">Skills</label>
+                            <div class="col-9 col-xs-3 col-md-6 mb-3 ">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input form-control " type="checkbox" name="skills[]"
+                                        id="Java" value="Java">
+                                    <label class="form-check-label" for="Java">Java</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class=" form-check-input form-control " type="checkbox" name="skills[]"
+                                        id="HTML" value="HTML">
+                                    <label class="form-check-label" for="HTML">HTML</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input form-control" type="checkbox" name="skills[]"
+                                        id="CSS" value="CSS">
+                                    <label class="form-check-label" for="CSS">CSS</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- BUTTONS -->
+                        <div class="btn-group row mt-1">
+                            <div class="btn" role="toolbar">
+                                <div class="btn-group" aria-label="First group">
+                                    <button type="submit" id="submit-btn" name="button" class="btn btn-primary"
+                                        value="submit">Enroll
+                                        Student</button>
+                                </div>
+                                <div class="btn">
+                                    <button type="reset" class="btn btn-danger">Clear</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+                <div class="col-1 col-sm-2">
+                    <div class="vl"></div>
+                </div>
+                <div class="col-5 col-sm-3">
+
+                    <div id="enroll"><b> Enrolled Students</b></div>
+
+                    <table class="table table-bordered" id="table">
+
+                        <thead id="thread">
+                            <tr>
+                                <th scope="col" id="thdes">Description</th>
+                                <th scope="col" id="thimg">Image</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="form-data" style="font-size: 10px; color:black;">
+                            <!--form data will be added here-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="foot">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <b>Copyright 2020-2021 by Fresher Training</b>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="index.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
