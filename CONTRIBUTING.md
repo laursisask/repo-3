@@ -63,6 +63,15 @@ The readme of each chart can be re-generated with the following command (run ins
 docker run --rm --volume "$(pwd):/helm-docs" -u "$(id -u)" jnorwood/helm-docs:v1.8.1
 ```
 
+### Generate CHANGELOG and bump version
+We can use gommitizen to generate the changelog and bump the version of the project.
+
+To use gommitizen, we can user docker image in the root of the project:
+
+```shell
+docker run --rm --volume "$(pwd):/code" -u "$(id -u)" ghcr.io/freepik-company/gommitizen:0.3.2 bump --changelog
+```
+
 ### Community Requirements
 
 This project is released with a [Contributor Covenant](https://www.contributor-covenant.org).
