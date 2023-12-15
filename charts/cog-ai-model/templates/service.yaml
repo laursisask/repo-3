@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "cog-ia-model.fullname" . }}
+  name: {{ include "cog-ai-model.fullname" . }}
   labels:
-    {{- include "cog-ia-model.labels" . | nindent 4 }}
+    {{- include "cog-ai-model.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "cog-ia-model.selectorLabels" . | nindent 4 }}
+    {{- include "cog-ai-model.selectorLabels" . | nindent 4 }}

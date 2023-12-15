@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "cog-ia-model.fullname" . }}
+  name: {{ include "cog-ai-model.fullname" . }}
   labels:
-    {{- include "cog-ia-model.labels" . | nindent 4 }}
+    {{- include "cog-ai-model.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "cog-ia-model.selectorLabels" . | nindent 6 }}
+      {{- include "cog-ai-model.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "cog-ia-model.labels" . | nindent 8 }}
+        {{- include "cog-ai-model.labels" . | nindent 8 }}
 	{{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -28,12 +28,12 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "cog-ia-model.serviceAccountName" . }}
+      serviceAccountName: {{ include "cog-ai-model.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       initContainers:
         {{- if eq .Values.initContainer.enabled "true" }}
-        - name: {{ include "cog-ia-model.name" . }}-init
+        - name: {{ include "cog-ai-model.name" . }}-init
           image: datamachines/git-lfs:latest
           volumeMounts:
             - name: model-data-volume

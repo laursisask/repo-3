@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "cog-ia-model.fullname" . }}
+  name: {{ include "cog-ai-model.fullname" . }}
   labels:
-    {{- include "cog-ia-model.labels" . | nindent 4 }}
+    {{- include "cog-ai-model.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "cog-ia-model.fullname" . }}
+    name: {{ include "cog-ai-model.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

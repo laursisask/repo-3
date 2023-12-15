@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "cog-ai-model.fullname" . }}-test-connection"
+  labels:
+    {{- include "cog-ai-model.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "cog-ai-model.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

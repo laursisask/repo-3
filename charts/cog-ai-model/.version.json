@@ -4,5 +4,5 @@
   "version_files": [
     "Chart.yaml:version"
   ],
-  "prefix": "cog-ia-model"
+  "prefix": "cog-ai-model"
 }
