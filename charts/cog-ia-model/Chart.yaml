@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cog-ia-model
+description: A Helm chart to install an IA model with Cog
+type: application
+version: 0.1.0
+appVersion: ""

@@ -1,0 +1,8 @@
+{
+  "version": "0.0.0",
+  "commit": "HEAD^",
+  "version_files": [
+    "Chart.yaml:version"
+  ],
+  "prefix": "cog-ia-model"
+}
