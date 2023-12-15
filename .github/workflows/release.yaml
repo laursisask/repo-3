@@ -53,7 +53,7 @@ jobs:
           useOCIRegistry: true
           registry-url:  oci://ghcr.io/${{ github.repository }}
           username: freepik-company
-          access-token: ${{ secrets.REGISTRY_ACCESS_TOKEN }}
+          access-token: ${{ secrets.GITHUB_TOKEN }}
           force: true
           chart-folder: chart
           # helm pull ghcr.io/freepik-company/my-chart:0.1.0
