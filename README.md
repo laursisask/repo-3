@@ -13,10 +13,10 @@ Please refer to Helm's [documentation](https://helm.sh/docs/) to get started.
 Once Helm is set up properly, add the repo as follows:
 
 ```bash
-helm repo add private-freepik-company https://freepik-company.github.io/private-helm-charts/
+helm repo add internal-freepik-company https://freepik-company.github.io/internal-helm-charts/
 ```
 
-You can then run `helm search repo private-freepik-company -l` to see the charts and versions.
+You can then run `helm search repo internal-freepik-company -l` to see the charts and versions.
 
 ## Contributing
 
