@@ -41,7 +41,7 @@ spec:
           args:
             - "/bin/sh"
             - "-c"
-            - "mkdir -p /src; if [ ! -d /src/model_data ]; then git clone --progress {{ .Values.config.modelRepo }} /src/model_data; else cd /src/model_data && git pull; fi "
+            - "mkdir -p /src; git clone {{ .Values.config.modelRepo }} /src/model_data || (cd /src/model_data && git pull)"
         {{- end }}        
       containers:
         - name: {{ .Chart.Name }}
