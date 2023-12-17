@@ -1,6 +1,6 @@
 {
-  "version": "0.3.0",
-  "commit": "18858180417e2f824bcd89489d69dfeb8938b084",
+  "version": "0.4.0",
+  "commit": "4e3e561fff5ded1e5e77a4a05aae3fef62a39faf",
   "version_files": [
     "Chart.yaml:version"
   ],
