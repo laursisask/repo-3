@@ -1,3 +1,9 @@
+## 0.4.3 (2023-12-18)
+
+### Fix
+
+- remove stderr to null in git clone
+
 ## 0.4.2 (2023-12-18)
 
 ### Fix
@@ -15,6 +21,8 @@
 ### Fix
 
 - rename cog-ia-model to cog-ai-model
+
+
 
 
 
