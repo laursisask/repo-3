@@ -95,3 +95,37 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+apiGateway:
+  enabled: false
+  parentRefs:
+    name: stable-gateway
+    namespace: gateway-ns
+  annotations: {}
+  #  kubernetes.io/key1: value1
+  #  kubernetes.io/key2: value2
+  hostnames: {}
+  #  - chart-example.local
+  #  - k8s.local
+
+routes: {}
+  # cogAiExtraRule:
+  #   hostnames: {}
+  #    - chart-example.local
+  #    - k8s.local
+  #   rules:
+  #    - matchesExtra: # Due to implementation constraint only 8 match per rule are allowed
+  #        - path:
+  #            type: PathPrefix
+  #            value: /
+  #          headers:
+  #            - type: Exact # Exact, RegularExpression
+  #              name: gw
+  #              value: true
+  #        - path:
+  # cogAiSimpleRule:
+  #   rules:
+  #     - matches:
+  #         - /url1/
+  #         - /url2/
+

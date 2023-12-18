@@ -1,0 +1,58 @@
+{{- if eq .Values.apiGateway.enabled true }}
+{{- range $key, $value := .Values.routes }}
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: {{ include "cog-ai-model.fullname" $ }}-{{ $key }}
+  labels:
+    {{- include "cog-ai-model.labels" $ | nindent 4 }}
+  {{- with $.Values.apiGateway.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  parentRefs:
+    - kind: Gateway
+      name: {{ $.Values.apiGateway.parentRefs.name }}
+      namespace: {{ $.Values.apiGateway.parentRefs.namespace }}
+  {{- if .hostnames }}
+  {{- with .hostnames }}
+  hostnames:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- else }}
+  {{- with $.Values.apiGateway.hostnames }}
+  hostnames:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- end }}
+  rules:
+  {{- range .rules }}
+    - matches:
+    {{- range .matches }}
+        - path:
+            type: PathPrefix
+            value: {{ . }}
+    {{- end }}
+    {{- with .matchesExtra }}
+    {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- with .filters }}
+      filters:
+    {{- toYaml . | nindent 4 }}
+    {{- end }}
+      backendRefs:
+    {{- if .backends }}
+    {{- with .backends }}
+    {{- tpl (toYaml .) $ | nindent 6 }}
+    {{- end }}
+    {{- else }}
+        - name: {{ include "cog-ai-model.fullname" $ }}
+          kind: Service
+          port: {{ $.Values.service.port }}
+          weight: 1
+    {{- end }}
+  {{- end }}
+---
+{{- end }}
+{{- end }}
