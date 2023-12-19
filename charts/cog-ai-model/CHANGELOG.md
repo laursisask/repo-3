@@ -1,3 +1,9 @@
+## 0.5.0 (2023-12-19)
+
+### Feat
+
+- Integrate httproute for gateway api implementation
+
 ## 0.4.3 (2023-12-18)
 
 ### Fix
@@ -21,6 +27,8 @@
 ### Fix
 
 - rename cog-ia-model to cog-ai-model
+
+
 
 
 
