@@ -1,3 +1,9 @@
+## 0.6.0 (2023-12-20)
+
+### Feat
+
+- set livenessprobe and readinessprobe as values to be able to modify them
+
 ## 0.5.0 (2023-12-19)
 
 ### Feat
@@ -27,6 +33,8 @@
 ### Fix
 
 - rename cog-ia-model to cog-ai-model
+
+
 
 
 
