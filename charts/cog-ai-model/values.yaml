@@ -129,3 +129,13 @@ routes: {}
   #         - /url1/
   #         - /url2/
 
+
+# TODO: Dar más tiempo para cuando el modelo se está usando para inferencia
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
