@@ -11,9 +11,9 @@ image:
   tag: ""
 
 config: 
-  modelRepo: "https://huggingface.co/THUDM/cogvlm-chat-hfnv"
-  modelRepo: "https://the-repository-of-the-model"
+  modelRepo: "https://huggingface.co/THUDM/cogvlm-chat-hfnv" #"https://the-repository-of-the-model"
   modelLocalDir: "/var/model/<model-name>"
+  modelMountDir: "/src/model_data"
 
 imagePullSecrets: []
 nameOverride: ""

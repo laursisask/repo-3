@@ -65,7 +65,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: model-data-volume
-              mountPath: "/src/model_data"
+              mountPath: {{ .Values.config.modelMountDir }}
       volumes:
         - name: model-data-volume
           hostPath:
