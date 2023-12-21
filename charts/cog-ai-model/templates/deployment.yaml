@@ -31,18 +31,6 @@ spec:
       serviceAccountName: {{ include "cog-ai-model.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
-      initContainers:
-        {{- if eq .Values.initContainer.enabled "true" }}
-        - name: {{ include "cog-ai-model.name" . }}-init
-          image: datamachines/git-lfs:latest
-          volumeMounts:
-            - name: model-data-volume
-              mountPath: "/src/model_data"
-          args:
-            - "/bin/sh"
-            - "-c"
-            - "mkdir -p /src; git clone {{ .Values.config.modelRepo }} /src/model_data || (cd /src/model_data && git pull)"
-        {{- end }}        
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
