@@ -1,3 +1,9 @@
+## 0.6.1 (2023-12-21)
+
+### Fix
+
+- parametrize volume mount directory
+
 ## 0.6.0 (2023-12-20)
 
 ### Feat
@@ -33,6 +39,8 @@
 ### Fix
 
 - rename cog-ia-model to cog-ai-model
+
+
 
 
 
