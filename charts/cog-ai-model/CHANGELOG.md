@@ -1,3 +1,9 @@
+## 0.7.0 (2023-12-21)
+
+### Feat
+
+- remove initContainer to use HG cache
+
 ## 0.6.1 (2023-12-21)
 
 ### Fix
@@ -39,6 +45,8 @@
 ### Fix
 
 - rename cog-ia-model to cog-ai-model
+
+
 
 
 
