@@ -1,3 +1,9 @@
+## 0.8.0 (2024-01-10)
+
+### Feat
+
+- add support for custom args in cog-ai-model helm chart
+
 ## 0.7.0 (2023-12-21)
 
 ### Feat
@@ -45,6 +51,8 @@
 ### Fix
 
 - rename cog-ia-model to cog-ai-model
+
+
 
 
 
