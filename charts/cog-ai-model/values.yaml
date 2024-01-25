@@ -135,3 +135,18 @@ readinessProbe:
   httpGet:
     path: /
     port: http
+
+
+
+sidecar:
+  redisConsumer:
+    enabled: false
+    name: redis-consumer
+    securityContext: {}
+    image:
+      repository: europe-west1-docker.pkg.dev/fc-shared/common/redis-sidecar-consumer-0.1
+      tag: latest
+      pullPolicy: IfNotPresent
+    livenessProbe: {}
+    readinessProbe: {}
+    resources: {}

@@ -54,6 +54,22 @@ spec:
           volumeMounts:
             - name: model-data-volume
               mountPath: {{ .Values.config.modelMountDir }}
+        {{- if .Values.sidecar.redisConsumer.enabled }}
+        - name: {{ .Chart.Name }}-{{.Values.sidecar.redisConsumer.name }}
+          securityContext:
+            {{- toYaml .Values.sidecar.redisConsumer.securityContext | nindent 12 }}
+          image: "{{ .Values.sidecar.redisConsumer.image.repository }}:{{ .Values.sidecar.redisConsumer.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.sidecar.redisConsumer.image.pullPolicy }}
+          {{- with .Values.sidecar.redisConsumer.livenessProbe }}
+          livenessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.sidecar.redisConsumer.readinessProbe }}
+          readinessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          resources:
+            {{- toYaml .Values.sidecar.redisConsumer.resources | nindent 12 }}
       volumes:
         - name: model-data-volume
           hostPath:
