@@ -74,6 +74,7 @@ spec:
           {{- end }}
           resources:
             {{- toYaml .Values.sidecar.redisConsumer.resources | nindent 12 }}
+        {{- end }}
       volumes:
         - name: model-data-volume
           hostPath:
