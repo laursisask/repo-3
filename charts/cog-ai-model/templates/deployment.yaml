@@ -49,6 +49,10 @@ spec:
           env:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+          {{- with .Values.sidecar.redisConsumer.envsFrom }}
+          envFrom:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
@@ -70,6 +74,10 @@ spec:
           imagePullPolicy: {{ .Values.sidecar.redisConsumer.image.pullPolicy }}
           {{- with .Values.sidecar.redisConsumer.envs }}
           env:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.sidecar.redisConsumer.envsFrom }}
+          envFrom:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           {{- with .Values.sidecar.redisConsumer.livenessProbe }}

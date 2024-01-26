@@ -153,5 +153,7 @@ sidecar:
     readinessProbe: {}
     resources: {}
     envs: {}
+    envsFrom: {}
 
 envs: {}
+envsFrom: {}
