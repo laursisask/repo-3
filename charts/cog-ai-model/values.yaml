@@ -152,3 +152,6 @@ sidecar:
     livenessProbe: {}
     readinessProbe: {}
     resources: {}
+    envs: {}
+
+envs: {}
