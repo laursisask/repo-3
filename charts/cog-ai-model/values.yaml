@@ -128,32 +128,28 @@ routes: {}
   #         - /url2/
 
 
-# TODO: Dar más tiempo para cuando el modelo se está usando para inferencia
+# Default livenessProbe and readinessProbe
 livenessProbe:
-  httpGet:
-    path: /
-    port: http
+  exec:
+    command:
+      - /usr/bin/sh
+      - -c
+      - /usr/bin/test -f /var/run/cog/ready
+  failureThreshold: 10
+  periodSeconds: 100
+  successThreshold: 1
+  timeoutSeconds: 1
+
 readinessProbe:
-  httpGet:
-    path: /
-    port: http
-
-
-
-sidecar:
-  redisConsumer:
-    enabled: false
-    name: redis-consumer
-    securityContext: {}
-    image:
-      repository: europe-west1-docker.pkg.dev/fc-shared/common/redis-sidecar-consumer-0.1
-      tag: latest
-      pullPolicy: IfNotPresent
-    livenessProbe: {}
-    readinessProbe: {}
-    resources: {}
-    envs: {}
-    envsFrom: {}
+  exec:
+    command:
+      - /usr/bin/sh
+      - -c
+      - /usr/bin/test -f /var/run/cog/ready
+  failureThreshold: 10
+  periodSeconds: 100
+  successThreshold: 1
+  timeoutSeconds: 1
 
 envs: {}
 envsFrom: {}
