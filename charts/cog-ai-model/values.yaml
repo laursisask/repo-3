@@ -16,6 +16,8 @@ config:
   modelLocalDir: "/var/huggingface/cache"
   modelMountDir: "/root/.cache/huggingface"
 
+runtimeClassName: nvidia
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -153,3 +155,4 @@ readinessProbe:
 
 envs: {}
 envsFrom: {}
+
