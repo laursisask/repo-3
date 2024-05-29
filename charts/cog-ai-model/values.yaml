@@ -48,6 +48,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
+  annotations: {}
   #type: ClusterIP
   #port: 5000
   type: NodePort
@@ -157,3 +158,81 @@ envs: {}
 envsFrom: {}
 
 strategy: {}
+
+# Nginx sidecar for auth-token management
+
+# Sidecar container to enable authorization token. Used to authenticate request using header 
+# - Authorization: Bearer XXXXXX
+# Disabled by default.
+# It creates a service in port TCP 80 to retrieve request and authorize it to proxy that request to COG later.
+sidecar:
+  enabled: false
+
+  name: nginx-auth-sidecar
+
+  # It must be a valid nginx image with support for template rendering
+  image:
+    repository: "nginx"
+    pullPolicy: IfNotPresent
+    tag: "1.26.0"
+
+  sealedSecrets:
+    # Sealed secret disabled by default
+    # To enable it set enabled to true, optionally set a name and set a sealed secret token form SealedSecret
+    # (https://github.com/bitnami-labs/sealed-secrets)
+
+    # If you don't want to use sealed secret, you can use a secret with the token installed by hand o by 
+    # other means and configure a secret name with environment variable TOKEN
+    enabled: false
+    name: "" # Name of the sealed secret (optional)
+    token: "" # Already sealed secret token
+
+  env: []
+
+  annotations: 
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+
+  securityContext: {}
+
+  resources: {}
+
+  livenessProbe: 
+    httpGet:
+      path: /healthz
+      port: 80
+    initialDelaySeconds: 15
+    periodSeconds: 20
+
+  readinessProbe:
+    httpGet:
+      path: /healthz
+      port: 80
+    initialDelaySeconds: 15
+    periodSeconds: 20
+
+  ports:
+    - name: http
+      containerPort: 80
+      protocol: TCP
+
+  service:
+    type: ClusterIP
+    port: 80
+    targetPort: 80
+
+  defaultConfTemplate: |
+    server {
+      listen 80;
+
+      location / {
+          if ($http_authorization != 'Bearer ${TOKEN}') {
+              return 403;
+          }
+
+          proxy_pass http://127.0.0.1:{{ .Values.service.targetPort }};
+          proxy_http_version 1.1;
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      }
+    }

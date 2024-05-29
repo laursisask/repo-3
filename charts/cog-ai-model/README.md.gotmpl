@@ -1,0 +1,41 @@
+{{ template "chart.header" . }}
+{{ template "chart.description" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+{{ template "chart.requirementsSection" . }}
+
+{{ template "chart.valuesSection" . }}
+
+## Nginx Auth
+
+This chart can deploy an Nginx server with Bearer Toekn authentication enabled. It is disabled by default.
+
+Just set sidecar.enable to true and provide the required values.
+
+If you want to use sealed secrets to enable the token just set sidecar.sealedSecrets to true and provide the required values for token key. 
+Alternatively you can provide a secret with the token key by hand or use a secret from a secret manager like vault and configure an environment variable 
+to set a env called `TOKEN` the retrieves the value of that secret.
+
+### Create a sealed secret
+
+Follow the instructions on the [sealed-secrets](https://github.com/bitnami-labs/sealed-secrets) project to install the sealed-secrets controller.
+
+Then you can create a sealed secret with the following command:
+
+```bash
+# Create a json/yaml-encoded Secret somehow:
+# (note use of `--dry-run` - this is just a local file!)
+echo -n MY_TOKEN | kubectl create secret generic mysecret --dry-run=client --from-file=foo=/dev/stdin -o json >mysecret.json
+
+# This is the important bit:
+kubeseal -f mysecret.json -w mysealedsecret.json
+```
+
+Then you can use the sealed secret in the values.yaml file like this:
+- Retrieve the foo key with the sealed secret from `mysealedsecret.json`
+- Set it in the values.yaml file in the key `sidecar.sealedSecrets.token`
+- Remove `mysealedsecret.json` and `mysecret.json` files
+- All these is now safe to be commited to a git repository
+
+{{ template "helm-docs.versionFooter" . }}

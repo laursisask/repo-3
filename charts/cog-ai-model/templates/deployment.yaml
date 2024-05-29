@@ -72,10 +72,55 @@ spec:
           volumeMounts:
             - name: model-data-volume
               mountPath: {{ .Values.config.modelMountDir }}
+        {{- if .Values.sidecar.enabled }}
+        - name: {{ .Values.sidecar.name }}
+          image: "{{ .Values.sidecar.image.repository }}:{{ .Values.sidecar.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.sidecar.image.pullPolicy }}
+          securityContext:
+            {{- toYaml .Values.sidecar.securityContext | nindent 12 }}
+          resources:
+            {{- toYaml .Values.sidecar.resources | nindent 12 }}
+          volumeMounts:
+            - name: nginx-auth-config
+              mountPath: /etc/nginx/templates
+          {{- if .Values.sidecar.sealedSecrets.enabled }}
+          env:
+            - name: TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "cog-ai-model.tokenSecretName" . }}
+                  key: token
+            {{- with .Values.sidecar.env }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
+          {{- else }}
+          {{- with .Values.sidecar.env }}
+          env:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- end }}
+          {{- with .Values.sidecar.ports }}
+          ports:
+              {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.sidecar.livenessProbe }}
+          livenessProbe:
+              {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.sidecar.readinessProbe }}
+          readinessProbe:
+              {{- toYaml . | nindent 12 }}
+          {{- end }}
+        {{- end }}
       volumes:
         - name: model-data-volume
           hostPath:
             path: {{ .Values.config.modelLocalDir }}
+        {{- if .Values.sidecar.enabled }}
+        - name: nginx-auth-config
+          configMap:
+            name: {{ include "cog-ai-model.sidecarName" . }}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

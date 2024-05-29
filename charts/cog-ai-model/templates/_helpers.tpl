@@ -60,3 +60,26 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create the name of the sidecar container
+*/}}
+{{- define "cog-ai-model.sidecarName" -}}
+{{- if .Values.fullnameOverride }}
+{{- printf "%s-%s" .Values.fullnameOverride .Values.sidecar.name | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- $name := default .Chart.Name .Values.nameOverride }}
+{{- printf "%s-%s-%s" .Release.Name $name .Values.sidecar.name | trunc 63 | trimSuffix "-" }}
+{{- end }}
+{{- end }}
+
+{{/*
+Create the secret name for token
+*/}}
+{{- define "cog-ai-model.tokenSecretName" -}}
+{{- if .Values.sidecar.sealedSecrets.enabled }}
+{{- default (include "cog-ai-model.sidecarName" .) .Values.sidecar.sealedSecrets.name }}
+{{- else }}
+{{- default "default" .Values.sidecar.sealedSecrets.name }}
+{{- end }}
+{{- end }}

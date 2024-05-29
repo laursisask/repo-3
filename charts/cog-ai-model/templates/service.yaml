@@ -17,3 +17,21 @@ spec:
       name: http
   selector:
     {{- include "cog-ai-model.selectorLabels" . | nindent 4 }}
+---
+{{- if .Values.sidecar.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "cog-ai-model.sidecarName" . }}
+  labels:
+    {{- include "cog-ai-model.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.sidecar.service.type }}
+  ports:
+    - port: {{ .Values.sidecar.service.port }}
+      targetPort: {{ .Values.sidecar.service.targetPort }}
+      protocol: TCP
+      name: auth
+  selector:
+    {{- include "cog-ai-model.selectorLabels" . | nindent 4 }}
+{{- end }}

@@ -1,0 +1,11 @@
+{{- if .Values.sidecar.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "cog-ai-model.sidecarName" . }}
+  labels:
+    {{- include "cog-ai-model.labels" . | nindent 4 }}
+data:
+  default.conf.template: |
+    {{ .Values.sidecar.defaultConfTemplate | nindent 4 }}
+{{- end }}
