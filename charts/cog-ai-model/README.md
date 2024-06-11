@@ -2,7 +2,7 @@
 
 A Helm chart to install an IA model with Cog
 
-![Version: 0.15.2](https://img.shields.io/badge/Version-0.15.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.15.3](https://img.shields.io/badge/Version-0.15.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 ## Values
 
@@ -58,8 +58,8 @@ A Helm chart to install an IA model with Cog
 | resources | object | `{}` |  |
 | routes | object | `{}` |  |
 | runtimeClassName | string | `"nvidia"` |  |
-| sealedSecrets.annotations."sealedsecrets.bitnami.com/cluster-wide" | string | `"true"` |  |
-| sealedSecrets.secrets | list | `[]` |  |
+| sealedSecrets | list | `[]` |  |
+| sealedSecretsAnnotations."sealedsecrets.bitnami.com/cluster-wide" | string | `"true"` |  |
 | securityContext | object | `{}` |  |
 | service.annotations | object | `{}` |  |
 | service.port | int | `5000` |  |

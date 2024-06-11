@@ -162,10 +162,9 @@ strategy: {}
 # Sealed values for secrets. It uses SealedSecrets to store secrets in a secure way.
 # Ensure you have SealedSecrets installed in your cluster before enabling this feature
 # and that you keep a sealed value to be sure that an upload to a repository is safe.
-sealedSecrets:
-  annotations:
-    sealedsecrets.bitnami.com/cluster-wide: "true"
-  secrets: []
+sealedSecretsAnnotations:
+  sealedsecrets.bitnami.com/cluster-wide: "true"
+sealedSecrets: []
   #- name: MY_SECRET
   #  value: "my-encrypted-secret-value"
 
