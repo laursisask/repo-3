@@ -159,6 +159,22 @@ envsFrom: {}
 
 strategy: {}
 
+# Sealed values for secrets. It uses SealedSecrets to store secrets in a secure way.
+# Ensure you have SealedSecrets installed in your cluster before enabling this feature
+# and that you keep a sealed value to be sure that an upload to a repository is safe.
+sealedSecrets: []
+  #- name: MY_SECRET
+  #  value: "my-encrypted-secret-value"
+
+volumes: []
+  # - name: my-volume
+  #   emptyDir: {}
+
+volumeMounts: []
+  # - name: my-volume
+  #   mountPath: /path/to/mount
+
+
 # Nginx sidecar for auth-token management
 
 # Sidecar container to enable authorization token. Used to authenticate request using header 

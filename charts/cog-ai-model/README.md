@@ -2,7 +2,7 @@
 
 A Helm chart to install an IA model with Cog
 
-![Version: 0.14.3](https://img.shields.io/badge/Version-0.14.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.15.0](https://img.shields.io/badge/Version-0.15.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 ## Values
 
@@ -58,6 +58,7 @@ A Helm chart to install an IA model with Cog
 | resources | object | `{}` |  |
 | routes | object | `{}` |  |
 | runtimeClassName | string | `"nvidia"` |  |
+| sealedSecrets | list | `[]` |  |
 | securityContext | object | `{}` |  |
 | service.annotations | object | `{}` |  |
 | service.port | int | `5000` |  |
@@ -96,6 +97,8 @@ A Helm chart to install an IA model with Cog
 | sidecar.service.type | string | `"ClusterIP"` |  |
 | strategy | object | `{}` |  |
 | tolerations | list | `[]` |  |
+| volumeMounts | list | `[]` |  |
+| volumes | list | `[]` |  |
 
 ## Nginx Auth
 

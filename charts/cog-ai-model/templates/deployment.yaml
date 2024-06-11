@@ -72,6 +72,9 @@ spec:
           volumeMounts:
             - name: model-data-volume
               mountPath: {{ .Values.config.modelMountDir }}
+            {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
         {{- if .Values.sidecar.enabled }}
         - name: {{ .Values.sidecar.name }}
           image: "{{ .Values.sidecar.image.repository }}:{{ .Values.sidecar.image.tag | default .Chart.AppVersion }}"
@@ -116,6 +119,9 @@ spec:
         - name: model-data-volume
           hostPath:
             path: {{ .Values.config.modelLocalDir }}
+        {{- with .Values.volumes}}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
         {{- if .Values.sidecar.enabled }}
         - name: nginx-auth-config
           configMap:
