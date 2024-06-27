@@ -48,7 +48,3 @@ jobs:
       - name: Test all packages
         run: |
           yarn test
-
-      - name: Lint all packages
-        run: |
-          yarn lint

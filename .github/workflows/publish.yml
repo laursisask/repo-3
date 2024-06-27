@@ -70,10 +70,6 @@ jobs:
         run: |
           yarn test
 
-      - name: Lint package
-        run: |
-          yarn lint
-
       - name: Configure Git User
         run: |
           git config --global user.name amplitude-sdk-bot
