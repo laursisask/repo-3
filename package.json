@@ -1,6 +1,6 @@
 {
-  "name": "segment-session-replay-wrapper",
-  "version": "0.1.0",
+  "name": "@amplitude/segment-session-replay-wrapper",
+  "version": "0.0.1",
   "description": "Wrapper to enable usage of Segment with Amplitude's Session Replay product",
   "main": "index.js",
   "repository": "git@github.com:amplitude/segment-session-replay-wrapper.git",
