@@ -32,9 +32,10 @@ describe('Segment Actions Wrapper', () => {
               session_id: 130,
             },
           },
+          userId: '1a2b3c',
         },
       } as unknown as Context);
-      expect(setSessionId).toHaveBeenCalledWith(130);
+      expect(setSessionId).toHaveBeenCalledWith(130, '1a2b3c');
       expect(mockedCookieJS.set).toHaveBeenCalledWith('amp_session_id', '130');
     });
     test('should pass session replay properties on the event', async () => {
