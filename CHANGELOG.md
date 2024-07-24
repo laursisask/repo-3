@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/amplitude/segment-session-replay-wrapper/compare/v0.3.0...v0.3.1) (2024-07-24)
+
+
+### Bug Fixes
+
+* have track calls await on session replay init promise ([1269619](https://github.com/amplitude/segment-session-replay-wrapper/commit/126961959366f9a451a9a9531519db911a2041af))
+
+
+
 # [0.3.0](https://github.com/amplitude/segment-session-replay-wrapper/compare/v0.1.0...v0.3.0) (2024-07-17)
 
 
