@@ -2,7 +2,7 @@ import * as sessionReplay from '@amplitude/session-replay-browser';
 import { Context, Plugin } from '@segment/analytics-next';
 import Cookie from 'js-cookie';
 import { AmplitudeIntegrationData, PluginOptions } from './types';
-import { VERSION } from 'src/version';
+import { VERSION } from './version';
 
 const getStoredSessionId = () => {
   const storedId = Cookie.get('amp_session_id') as string;
