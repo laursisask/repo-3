@@ -254,3 +254,57 @@ sidecar:
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
       }
     }
+
+# NFS server configuration default values
+# It requeres the environment variable SHARED_DIRECTORY to be set to the directory to be shared.
+# Also, it requieres the volume and volumeMounts to be set in the deployment related to the SHARE_DIRECTORY path.
+nfs:
+  enabled: false
+
+  name: nfs-server-sidecar
+
+  # It must be a valid nginx image with support for template rendering
+  image:
+    repository: "itsthenetwork/nfs-server-alpine"
+    pullPolicy: IfNotPresent
+    tag: "12"
+
+  env: []
+
+  securityContext:
+    capabilities:
+      add:
+        - SYS_ADMIN
+    privileged: true
+
+  resources: {}
+
+  livenessProbe:
+    tcpSocket:
+      port: 2049
+    initialDelaySeconds: 30
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+    successThreshold: 1
+
+  readinessProbe:
+    tcpSocket:
+      port: 2049
+    initialDelaySeconds: 30
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+    successThreshold: 1
+
+  ports:
+    - name: nfs-server
+      containerPort: 2049
+      protocol: TCP
+
+  service:
+    type: ClusterIP
+    port: 2049
+    targetPort: 2049
+
+  volumeMounts: []

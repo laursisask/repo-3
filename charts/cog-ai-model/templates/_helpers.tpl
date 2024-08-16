@@ -83,3 +83,15 @@ Create the secret name for token
 {{- default "default" .Values.sidecar.sealedSecrets.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Create the name of the nfs sidecar container
+*/}}
+{{- define "cog-ai-model.nfsSidecarName" -}}
+{{- if .Values.fullnameOverride }}
+{{- printf "%s-%s" .Values.fullnameOverride .Values.nfs.name | trunc 63 | trimSuffix "-" }}
+{{- else }}
+{{- $name := default .Chart.Name .Values.nameOverride }}
+{{- printf "%s-%s-%s" .Release.Name $name .Values.nfs.name | trunc 63 | trimSuffix "-" }}
+{{- end }}
+{{- end }}

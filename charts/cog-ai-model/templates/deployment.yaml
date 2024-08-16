@@ -115,6 +115,39 @@ spec:
               {{- toYaml . | nindent 12 }}
           {{- end }}
         {{- end }}
+        {{- if .Values.nfs.enabled }}
+        - name: {{ .Values.nfs.name }}
+          image: "{{ .Values.nfs.image.repository }}:{{ .Values.nfs.image.tag }}"
+          imagePullPolicy: {{ .Values.nfs.image.pullPolicy }}
+          {{- with .Values.nfs.env }}
+          env:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.nfs.ports }}
+          ports:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.nfs.securityContext }}
+          securityContext:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.nfs.volumeMounts }}
+          volumeMounts:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.nfs.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.nfs.livenessProbe }}
+          livenessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.nfs.readinessProbe }}
+          readinessProbe:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+        {{- end }}
       volumes:
         - name: model-data-volume
           hostPath:
