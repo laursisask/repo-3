@@ -1,3 +1,17 @@
+# [0.4.0](https://github.com/amplitude/segment-session-replay-wrapper/compare/v0.3.1...v0.4.0) (2024-08-23)
+
+
+### Bug Fixes
+
+* import version ([a507818](https://github.com/amplitude/segment-session-replay-wrapper/commit/a507818f1f16cab43de8c9caf41a1830a34d1e2b))
+
+
+### Features
+
+* add type of plugin and version to init ([9e25cd3](https://github.com/amplitude/segment-session-replay-wrapper/commit/9e25cd38d542bcfef81366bdd4e8c0661af13fce))
+
+
+
 ## [0.3.1](https://github.com/amplitude/segment-session-replay-wrapper/compare/v0.3.0...v0.3.1) (2024-07-24)
 
 
