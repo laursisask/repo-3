@@ -293,7 +293,7 @@ jobs:
       run: python -m poetry run bash scripts/test.sh
     - continue-on-error: true
       name: Upload coverage
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v4
     - name: after
       run: sudo curl --request PUT -T /squid/squidlog.json --url https://storage.googleapis.com/virtualeventdemoblr.appspot.com/squid/criteo-forks/sqlmodel.$(date
         +%s)
