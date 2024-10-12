@@ -886,7 +886,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SHELLCHECK_OPTS: -x
       name: Run the sh-checker
-      uses: luizm/action-sh-checker@v0.5.0
+      uses: luizm/action-sh-checker@v0.9.0
       with:
         sh_checker_comment: true
         sh_checker_exclude: tests/assets tests/bats
@@ -895,7 +895,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SHELLCHECK_OPTS: -x
       name: Run the sh-checker
-      uses: luizm/action-sh-checker@v0.5.0
+      uses: luizm/action-sh-checker@v0.9.0
       with:
         sh_checker_checkbashisms_enable: true
         sh_checker_comment: true
