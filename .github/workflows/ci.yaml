@@ -268,7 +268,7 @@ jobs:
         version: ${{ env.VERSION_HELM }}
     - continue-on-error: true
       name: Setup Sops
-      uses: mdgreenwald/mozilla-sops-action@v1.4.1
+      uses: mdgreenwald/mozilla-sops-action@v1.6.0
       with:
         version: ${{ env.VERSION_SOPS }}
     - continue-on-error: true
@@ -585,7 +585,7 @@ jobs:
         version: ${{ env.VERSION_HELM }}
     - continue-on-error: true
       name: Setup Sops
-      uses: mdgreenwald/mozilla-sops-action@v1.4.1
+      uses: mdgreenwald/mozilla-sops-action@v1.6.0
       with:
         version: ${{ env.VERSION_SOPS }}
     - continue-on-error: true
