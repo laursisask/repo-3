@@ -253,7 +253,7 @@ jobs:
         toolchain: nightly
     - continue-on-error: true
       name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - continue-on-error: true
       name: Test
       run: make test
@@ -514,7 +514,7 @@ jobs:
         toolchain: stable
     - continue-on-error: true
       name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - continue-on-error: true
       name: Install WasmTime
       run: 'curl https://wasmtime.dev/install.sh -sSf | bash
@@ -796,7 +796,7 @@ jobs:
         toolchain: stable
     - continue-on-error: true
       name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - continue-on-error: true
       env:
         CARGO_BUILD_TARGET: ${{ matrix.target }}
