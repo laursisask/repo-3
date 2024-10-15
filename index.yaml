@@ -1,5 +1,23 @@
 apiVersion: v1
 entries:
+  actions-runner-controller:
+  - apiVersion: v2
+    appVersion: 0.26.0
+    created: "2024-10-15T20:44:07.682922322Z"
+    description: A Kubernetes controller that operates self-hosted runners for GitHub
+      Actions on your Kubernetes cluster.
+    digest: 2a8b91e026c345691a9b075e758a4bb19739326df2aedef76baee6229b7182c2
+    home: https://github.com/actions-runner-controller/actions-runner-controller
+    maintainers:
+    - name: actions-runner-controller
+      url: https://github.com/actions-runner-controller
+    name: actions-runner-controller
+    sources:
+    - https://github.com/actions-runner-controller/actions-runner-controller
+    type: application
+    urls:
+    - https://github.com/laursisask/repo-3/releases/download/actions-runner-controller-0.21.0/actions-runner-controller-0.21.0.tgz
+    version: 0.21.0
   external-dns:
   - annotations:
       artifacthub.io/changes: |
@@ -32,4 +50,4 @@ entries:
     urls:
     - https://github.com/laursisask/repo-3/releases/download/external-dns-helm-chart-1.14.4/external-dns-1.14.4.tgz
     version: 1.14.4
-generated: "2024-10-15T13:31:55.153189072Z"
+generated: "2024-10-15T20:44:07.682930508Z"
