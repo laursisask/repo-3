@@ -2516,7 +2516,7 @@ jobs:
       working-directory: client-sdk/go
     - continue-on-error: true
       name: Upload to codecov.io
-      uses: codecov/codecov-action@v4.3.1
+      uses: codecov/codecov-action@v4.6.0
       with:
         directory: client-sdk/go
     - name: after
