@@ -258,7 +258,7 @@ jobs:
 
         '
     - continue-on-error: true
-      uses: pypa/gh-action-pip-audit@v1.0.8
+      uses: pypa/gh-action-pip-audit@v1.1.0
       with:
         local: true
         virtual-environment: env/
