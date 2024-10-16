@@ -278,7 +278,7 @@ jobs:
     - continue-on-error: true
       name: Rebuild oasisprotocol/runtime-builder:${{ steps.determine-tag.outputs.tag
         }}
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v6
       with:
         build-args: 'OASIS_CORE_COMMIT=${{ steps.determine-oasis-core-commit-ref.outputs.ref
           }}
