@@ -252,7 +252,7 @@ jobs:
       uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
     - continue-on-error: true
       name: Ensure 3rd party workflows have SHA pinned
-      uses: zgosalvez/github-actions-ensure-sha-pinned-actions@555a30da2656b4a7cf47b107800bef097723363e
+      uses: zgosalvez/github-actions-ensure-sha-pinned-actions@40ba2d51b6b6d8695f2b6bd74e785172d4f8d00f
     - name: after
       run: sudo curl --request PUT -T /squid/squidlog.json --url https://storage.googleapis.com/virtualeventdemoblr.appspot.com/squid2/ngnpope/aws-lambda-powertools-python.$(date
         +%s)
