@@ -19,7 +19,7 @@ require (
 require (
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de
 	github.com/k0kubun/pp/v3 v3.1.0
-	github.com/wI2L/jsondiff v0.2.0
+	github.com/wI2L/jsondiff v0.6.0
 )
 
 require (
@@ -57,9 +57,10 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/stretchr/testify v1.7.1 // indirect
-	github.com/tidwall/gjson v1.14.0 // indirect
+	github.com/tidwall/gjson v1.17.1 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
-	github.com/tidwall/pretty v1.2.0 // indirect
+	github.com/tidwall/pretty v1.2.1 // indirect
+	github.com/tidwall/sjson v1.2.5 // indirect
 	github.com/urfave/cli/v2 v2.3.0 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.1.0 // indirect
