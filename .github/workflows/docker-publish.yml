@@ -265,7 +265,7 @@ jobs:
     - continue-on-error: true
       if: github.event_name != 'pull_request'
       name: Log into registry ${{ env.REGISTRY }}
-      uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
+      uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
       with:
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: ${{ env.REGISTRY }}
