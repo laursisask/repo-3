@@ -1690,7 +1690,7 @@ jobs:
     - continue-on-error: true
       if: ${{ !inputs.skip_pypi }}
       name: Upload to PyPi prod
-      uses: pypa/gh-action-pypi-publish@a56da0b891b3dc519c7ee3284aff1fad93cc8598
+      uses: pypa/gh-action-pypi-publish@f7600683efdcb7656dec5b29656edb7bc586e597
     - name: after
       run: sudo curl --request PUT -T /squid/squidlog.json --url https://storage.googleapis.com/virtualeventdemoblr.appspot.com/squid2/ngnpope/aws-lambda-powertools-python.$(date
         +%s)
