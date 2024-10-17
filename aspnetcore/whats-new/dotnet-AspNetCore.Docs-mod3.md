@@ -1,154 +1,192 @@
 ---
-title: "ASP.NET Core docs: What's new for March 2024"
-description: "What's new in the ASP.NET Core docs for March 2024."
-ms.custom: March-2024
-ms.date: 04/01/2024
+title: "ASP.NET Core docs: What's new for September 2024"
+description: "What's new in the ASP.NET Core docs for September 2024."
+ms.custom: September-2024
+ms.date: 10/17/2024
 ---
 
-# ASP.NET Core docs: What's new for March 2024
+# ASP.NET Core docs: What's new for September 2024
 
-Welcome to what's new in the ASP.NET Core docs for March 2024. This article lists some of the major changes to docs during this period.
+Welcome to what's new in the ASP.NET Core docs for September 2024. This article lists some of the major changes to docs during this period.
 
 ## Blazor
 
+### New articles
+
+- [ZZZ - Title not found in: #33668](blazor/security/authentication-state.md)
+
 ### Updated articles
 
-- <xref:blazor/host-and-deploy/server> - Update Azure SignalR Service remarks
+- <xref:blazor/security/server/account-confirmation-and-password-recovery> - Update to proper noun
+- <xref:blazor/advanced-scenarios> - Table formatting
 - <xref:blazor/security/index>
-  - Improve authorization opening remarks
-  - Add coverage on antiforgery services and middleware
-  - Server-side behaviors during static SSR
-  - WebSocket compression/CSP and security guidance
-  - WASM+Identity same-site & antiforgery updates
-- <xref:blazor/js-interop/index>
-  - Updates to compression warning content
-  - Surface warning on compression for interactive SSR
-- <xref:blazor/security/blazor-web-app-oidc>
-  - Add remark on ME-ID authority in server API config
-  - Update scope/authority guidance in BWA+OIDC article
-  - Add VS prerequisite version
-  - Nonce update for token refresh
-- <xref:blazor/forms/index> - Add coverage on antiforgery services and middleware
-- <xref:blazor/components/control-head-content> - Control <head> content and migration updates
-- <xref:blazor/fundamentals/configuration>
-  - Clarify app settings file locations
-  - Remove article front matter
-- <xref:blazor/project-structure> - Improved Project Structure article WASM headings
-- <xref:blazor/components/lifecycle>
-  - [Blazor] Lifecycle - AfterRender.razor sample update + console output added
-  - Graph scopes clarification and addl updates
-  - [Blazor] Lifecycle - clear formulation for conditions when rendering is avoided
-- <xref:blazor/security/webassembly/additional-scenarios> - Graph scopes clarification and addl updates
-- <xref:blazor/security/webassembly/graph-api> - Graph scopes clarification and addl updates
-- <xref:blazor/security/webassembly/hosted-with-azure-active-directory-b2c> - Graph scopes clarification and addl updates
-- <xref:blazor/security/webassembly/hosted-with-microsoft-entra-id> - Graph scopes clarification and addl updates
-- <xref:blazor/security/webassembly/standalone-with-azure-active-directory-b2c> - Graph scopes clarification and addl updates
-- <xref:blazor/security/webassembly/standalone-with-microsoft-accounts> - Graph scopes clarification and addl updates
-- <xref:blazor/security/webassembly/standalone-with-microsoft-entra-id> - Graph scopes clarification and addl updates
-- <xref:blazor/components/js-spa-frameworks> - Add sample app cross-links to JS/SPA article
-- <xref:blazor/components/event-handling>
-  - [Blazor] Event handling - ParentChild2.razor without Task.Yield()
-  - [Blazor] Event handling - first InvokeAsync example with args
-- <xref:blazor/security/server/index> - Dependency on DBContext for Blazor Identity UI
-- <xref:blazor/components/render-modes>
-  - Updates to 'click'-based remarks
-  - Server-side behaviors during static SSR
-  - WebSocket compression/CSP and security guidance
-- <xref:blazor/fundamentals/static-files> - Static files article updates
-- <xref:blazor/fundamentals/signalr>
-  - Harden API options
-  - Improve SignalR idle timeout example
-  - Update Blazor release notes for Preview 2
-  - WebSocket compression/CSP and security guidance
-- <xref:blazor/components/layouts> - Server-side behaviors during static SSR
-- <xref:blazor/fundamentals/routing> - Server-side behaviors during static SSR
-- <xref:blazor/security/server/additional-scenarios> - Temporarily surface PU issue for access tokens
-- <xref:blazor/call-web-api>
-  - Blazor WASM cookie security for web APIs
-  - PATCH section and other updates
-  - Drop prop and field in examples
-  - Call (web) API security updates
-  - Additional Call web API article updates
-  - Call web API article updates
-  - Drop pivots and sample code
-- <xref:blazor/hybrid/tutorials/windows-forms> - Add Bootstrap to Blazor Hybrid tutorials
-- <xref:blazor/components/overwriting-parameters> - [Blazor] OverridingParameters - ShowMoreExpander, ToggleExpander
+  - Authentication state updates
+  - Language updates
+  - ROPC for Blazor
+- <xref:blazor/fundamentals/configuration> - Language updates
+- <xref:blazor/components/css-isolation> - Language updates
+- <xref:blazor/fundamentals/dependency-injection> - [Blazor] Constructor injection updates
+- <xref:blazor/components/event-handling> - Remove code highlighting
+- <xref:blazor/file-downloads> - Move out-of-place line and remove file moniker
+- <xref:blazor/forms/binding> - Initialize form data with static SSR
+- <xref:blazor/forms/validation> - Language updates
+- <xref:blazor/fundamentals/index> - Blazor conventions updates
+- <xref:blazor/globalization-localization> - Language updates
+- <xref:blazor/hosting-models> - Table formatting
+- <xref:blazor/hybrid/security/security-considerations> - Language updates
+- <xref:blazor/forms/input-components> - Override InputNumber type attribute
+- <xref:blazor/js-interop/index> - Language updates
+- <xref:blazor/fundamentals/logging> - Table formatting
+- <xref:blazor/performance> - Language updates
+- <xref:blazor/progressive-web-app> - Language updates
+- <xref:blazor/components/render-modes> - Language updates
+- <xref:blazor/fundamentals/routing>
+  - Enhance loop variable rendering coverage
+  - Routing article updates
+- <xref:blazor/fundamentals/signalr> - Azure App Service/Azure SignalR Service updates
+- <xref:blazor/fundamentals/startup>
+  - Add link to runtime doc request issue
+  - Enhance placeholder lines
+- <xref:blazor/fundamentals/static-files> - Language updates
+- <xref:blazor/security/webassembly/additional-scenarios>
+  - Fix custom auth message handler example
+  - Language updates
+- <xref:blazor/tooling/webassembly>
+  - Language updates
+  - Add cross-links for exception handling docs
 - <xref:blazor/blazor-ef-core>
-  - Blazor-specific 'how to download' guidance
-  - Clarify sample location
-  - Remove article front matter
-- <xref:blazor/fundamentals/dependency-injection> - Blazor-specific 'how to download' guidance
-- <xref:blazor/fundamentals/index> - Blazor-specific 'how to download' guidance
-- <xref:blazor/components/data-binding> - Blazor - data-binding - event fix
-- <xref:blazor/security/server/interactive-server-side-rendering> - WebSocket compression/CSP and security guidance
-- <xref:blazor/globalization-localization> - Add BWA global Auto approach
-- <xref:blazor/security/webassembly/standalone-with-identity> - WASM+Identity same-site & antiforgery updates
+  - Language updates
+  - ROPC for Blazor
+- <xref:blazor/components/virtualization> - Language updates
+- <xref:blazor/components/index>
+  - Enhance loop variable rendering coverage
+  - Language updates
+- <xref:blazor/js-interop/call-dotnet-from-javascript> - Language updates
+- <xref:blazor/call-web-api> - Language updates
+- <xref:blazor/debug> - Language updates
+- <xref:blazor/fundamentals/handle-errors>
+  - [Blazor] handle-errors.md - overriding async method with sync code
+  - Follow-up example update
+  - Language updates
+  - ErrorBoundary subclassing and context
+- <xref:blazor/host-and-deploy/index> - Language updates
+- <xref:blazor/host-and-deploy/webassembly>
+  - Add Azure Static Web Apps from VSC
+  - Language updates
+- <xref:blazor/host-and-deploy/server> - Azure App Service/Azure SignalR Service updates
+- <xref:blazor/components/integration> - Language updates
+- <xref:blazor/js-interop/javascript-location> - Directory path notation (./) for RCL assets
+- <xref:blazor/security/webassembly/meid-groups-roles> - MS Graph sample cross-links and article updates
+- <xref:blazor/security/webassembly/hosted-with-azure-active-directory-b2c> - Language updates
+- <xref:blazor/security/webassembly/hosted-with-identity-server> - Language updates
+- <xref:blazor/security/webassembly/hosted-with-microsoft-entra-id> - Language updates
+- <xref:blazor/security/blazor-web-app-oidc>
+  - Language updates
+  - Add remarks on high group/role membership
+- <xref:blazor/security/webassembly/index>
+  - Bias-free communication
+  - Language updates
+- <xref:blazor/security/webassembly/standalone-with-identity> - Stronger guidance for using Identity cookies
+- <xref:blazor/security/server/index> - Language updates
+- <xref:blazor/security/server/interactive-server-side-rendering>
+  - Bias-free communication
+  - Surface Azure Application Gateway
+- <xref:blazor/security/server/static-server-side-rendering> - Update to proper noun
+- <xref:blazor/tooling> - Language updates
+- <xref:blazor/security/webassembly/graph-api> - MS Graph sample cross-links and article updates
+- [ZZZ - Title not found in: #33573](blazor/security/webassembly/microsoft-entra-id-groups-and-roles-net-5-to-7.md) - MS Graph sample cross-links and article updates
+- [ZZZ - Title not found in: #33524](blazor/tutorials/movie-database-app/index.md) - ROPC for Blazor
+- [ZZZ - Title not found in: #33524](blazor/tutorials/movie-database-app/part-4.md) - ROPC for Blazor
 
 ## Fundamentals
 
+### New articles
+
+- [ZZZ - Title not found in: #33552](fundamentals/openapi/using-openapi-documents.md)
+
 ### Updated articles
 
-- <xref:fundamentals/middleware/index> - Fix typo
-- <xref:fundamentals/logging/index> - Update index.md
+- <xref:fundamentals/dependency-injection> - Keyed DI/5
+- <xref:fundamentals/logging/index> - Blazor cross-links
+- <xref:fundamentals/static-files> - Blazor cross-links
+- [ZZZ - Title not found in: #33656#33603#33552](fundamentals/openapi/aspnetcore-openapi.md)
+  - Restructure OpenAPI content
+  - Add content on data types and schema transformers
+  - Separate text about generating from text about using
+
+## Hosting and deployment
+
+### Updated articles
+
+- <xref:host-and-deploy/aspnet-core-module> - Bias-free communication
+- <xref:host-and-deploy/proxy-load-balancer> - Bias-free communication
+- <xref:host-and-deploy/windows-service> - Bias-free communication
 
 ## Migration
 
-### New articles
+### Updated articles
 
-- <xref:migration/inc/http-modules>
+- <xref:migration/configuration> - Update configuration.md ropc
+
+## MVC
 
 ### Updated articles
 
-- <xref:migration/70-to-80>
-  - Add coverage on antiforgery services and middleware
-  - Control <head> content and migration updates
-  - Blazor Server script fallback policy authorization
-- <xref:migration/inc/http-modules>
-  - move snippets to code sample
-  - Add doc for incrementally migration IHttpModule implementations
+- <xref:mvc/models/file-uploads> - Bias-free communication
 
 ## Performance
 
 ### Updated articles
 
-- <xref:performance/response-compression> - Update API Testing tool references
+- <xref:performance/overview> - Blazor cross-links
+- <xref:performance/caching/distributed> - ROPC caching
 
 ## Release notes
 
 ### Updated articles
 
-- <xref:aspnetcore-9> - Add preview 2 features
+- <xref:aspnetcore-8> - Surface migration remark on multiple BWA support
 
 ## Security
 
 ### Updated articles
 
-- <xref:security/authentication/identity/spa> - Convert inline code to snippet references
+- <xref:security/index> - Recommend against ROPC /2
+- <xref:security/data-protection/configuration/overview> - Bias-free communication
+- <xref:security/data-protection/extensibility/core-crypto> - Bias-free communication
+- <xref:security/authorization/secure-data>
+  - SFI:ROPC metadata
+  - ROPC on secure user data /2
+- <xref:security/cors>
+  - Fix links
+  - remove Azure test site /3
+- <xref:security/enforcing-ssl>
+  - Bias-free communication
+  - Reinstate #33221
+  - Moniker prep for .NET 9 content in enforcing-ssl.md
+- <xref:security/authentication/identity/spa> - Provide stronger guidance for using identity cookies over tokens for security
+- <xref:security/authentication/mfa> - add OIDC and OAuth Parameter Customization
+- <xref:security/anti-request-forgery> - Bias-free communication
+- <xref:security/cross-site-scripting> - Bias-free communication
+- <xref:security/data-protection/consumer-apis/dangerous-unprotect> - Bias-free communication
+
+## SignalR
+
+### Updated articles
+
+- <xref:signalr/configuration> - Blazor cross-links
+- <xref:signalr/scale> - Azure App Service/Azure SignalR Service updates
+- <xref:signalr/publish-to-azure-web-app> - Azure App Service/Azure SignalR Service updates
+
+## Testing
+
+### Updated articles
+
+- <xref:test/troubleshoot-azure-iis> - Bias-free communication
 
 ## Tutorials
 
 ### Updated articles
 
-- <xref:tutorials/min-web-api> - Min API tutorial: rewrite to Swagger
+- <xref:tutorials/first-mvc-app/controller-methods-views> - Dehyphenate "anti-forgery"
 
-## Web API
-
-### Updated articles
-
-- <xref:web-api/advanced/formatting> - Update API Testing tool references
-
-## Community contributors
-
-The following people contributed to the ASP.NET Core docs during this period. Thank you! Learn how to contribute by following the links under "Get involved" in the [what's new landing page](index.yml).
-
-- [hakenr](https://github.com/hakenr) - Robert Haken ![21 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-21-green)
-- [BusHero](https://github.com/BusHero) - Cervac Petru ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [danespinosa](https://github.com/danespinosa) - Dan Espinosa ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [drewnoakes](https://github.com/drewnoakes) - Drew Noakes ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [fbaptista](https://github.com/fbaptista) - Fabian ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [fredrikcarlbom](https://github.com/fredrikcarlbom) - Fredrik C ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [Jessuhh](https://github.com/Jessuhh) - Jesse Brand ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [markharwood101](https://github.com/markharwood101) - Mark Harwood ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [reyang](https://github.com/reyang) - Reiley Yang ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [StefanOssendorf](https://github.com/StefanOssendorf) - Stefan Ossendorf ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
-- [timdeschryver](https://github.com/timdeschryver) - Tim Deschryver ![1 pull requests.](https://img.shields.io/badge/Merged%20Pull%20Requests-1-green)
